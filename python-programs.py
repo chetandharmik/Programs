@@ -112,7 +112,7 @@ def max_array_rotation(arr,rotation_freq,length_arr):
     return z
 
 #Find the Rotation Count in Rotated Sorted array
-def no_of_rotation(arr,rotated_array,n,d)
+def no_of_rotation(arr,rotated_array,n,d):
     x=[]
     b=[]
     c=[]
@@ -135,6 +135,78 @@ def no_of_rotation(arr,rotated_array,n,d)
     return x
 
 
+
+#Rearrange an array such that arr[i] = i
+def Rearrange_array(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if arr[j]==i:
+                arr[i],arr[j]=arr[j],arr[i]
+    for i in range(len(arr)):
+        if arr[i]!=i:
+            arr[i]=-1
+   
+    print(arr)
+    return arr
+
+
+#Write a program to reverse an array or string
+def Reverse_array(arr):
+    print(arr[::-1])
+    return arr
+
+
+#Rearrange array such that arr[i] >= arr[j] if i is even and arr[i]<=arr[j] if i is odd and j < i
+def rearrangeArr(arr,len_arr):
+    temp_arr=[]
+    even_pos=len_arr/2
+    odd_pos=len_arr - even_pos
+    for i in range(0,len_arr):
+        temp_arr=arr[i]
+    temp_arr.sort()
+    print(temp_arr)
+    j=odd_pos-1
+    for i in range(0,len_arr,2):
+        arr[i]=temp_arr[j]
+        j=j-1
+    k=even_pos+1
+    for i in range(1,len_arr,2):
+        arr[i]=temp_arr[k]
+        k=k+1
+    print(arr)
+    return arr
+
+#Rearrange positive and negative numbers in O(n) time and O(1) extra space
+def Positive_negative_rearrange(arr,Length_arr):
+    positive_arr=[]
+    negative_arr=[]
+    for pos in arr:
+        if pos>0:
+            positive_arr.append(pos)
+        else:
+            negative_arr.append(pos) 
+    sorted_arr=negative_arr+positive_arr
+    print(sorted_arr)
+    return sorted_arr
+
+#move all zeros to the end
+def move_zeros(arr,n):
+    temp_arr=[]
+    temp1_arr=[]
+    for i in arr:
+        if i==0:
+            temp_arr.append(i)
+        else:
+            temp1_arr.append(i)
+    print(temp1_arr+temp_arr)  
+    return temp_arr
+
+#K’th Smallest/Largest Element in Unsorted Array
+def Kth_Smallest_largest(arr,n,ks,kl):
+    arr.sort()
+    print(arr[ks-1])
+    print(arr[n-kl])
+    return arr
 
 
 
