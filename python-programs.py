@@ -208,6 +208,21 @@ def Kth_Smallest_largest(arr,n,ks,kl):
     print(arr[n-kl])
     return arr
 
+#Program for Mean and median of an unsorted array
+def Mean_and_Median(arr,n):
+    sum=0
+    mid=n//2
+    for i in arr:
+        sum=sum+i
+    mean=float(sum/n)
+    if(n%2==0):
+        median=float(arr[mid]+arr[mid-1])/2
+    else:
+        median=arr[mid] 
+    print(mean)
+    print(median) 
+    return mean
+
 
 
 
