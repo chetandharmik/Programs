@@ -224,6 +224,26 @@ def Mean_and_Median(arr,n):
     return mean
 
 
+#K maximum sum combinations from two arrays
+def max_sum_two_array(arr1,arr2,length_arr1,length_arr2,k):
+    res_arr=[]
+    p=[]
+    unique_arr=[]
+    for i in arr1:
+        for j in arr2:
+            x=i+j
+            res_arr.append(x)
+    m=len(res_arr)
+    res_arr.sort()
+    for i in res_arr:
+        if i not in unique_arr:
+            unique_arr.append(i)
+    for i in range(k):
+        print(unique_arr[len(unique_arr)-i-1])
+    return res_arr
+
+
+
 
 
 
